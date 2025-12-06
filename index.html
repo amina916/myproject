@@ -5,156 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сайт мебельного магазина</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Авион</h1>
-        <button type="button" class="search-btn">
-            <img src="assets/icons/Search.png" alt="Поиск">
-        </button>
-        <button type="button" class="search-btn">
-            <img src="assets/icons/Shopping--cart.png" alt="Корзина">
-        </button>
-        <button type="button" class="search-btn">
-            <img src="assets/icons/User--avatar.png" alt="Пользователь">
-        </button>
-        <nav>
-            <ul>
-                <li><a href = "#">Навигационная ссылка</a></li>
-                <li><a href = "#">Навигационная ссылка</a></li>
-                <li><a href = "#">Навигационная ссылка</a></li>
-                <li><a href = "#">Навигационная ссылка</a></li>
-                <li><a href = "#">Навигационная ссылка</a></li>
-                <li><a href = "#">Навигационная ссылка</a></li>
-                <li><a href = "#">Навигационная ссылка</a></li>
+    <header class="header">
+        <div class="header__top">
+            <h1 class="header__title">Авион</h1>
+            <div class="header__actions">
+                <button type="button" class="header__action-btn header__action-btn--search">
+                    <img src="assets/icons/Search.png" alt="Поиск" class="header__action-icon">
+                </button>
+                <button type="button" class="header__action-btn header__action-btn--cart">
+                    <img src="assets/icons/Shopping--cart.png" alt="Корзина" class="header__action-icon">
+                </button>
+                <button type="button" class="header__action-btn header__action-btn--user">
+                    <img src="assets/icons/User--avatar.png" alt="Пользователь" class="header__action-icon">
+                </button>
+            </div>
+        </div>
+        
+        <nav class="header__nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#section1" class="nav__link">Раздел 1</a></li>
+                <li class="nav__item"><a href="#section2" class="nav__link">Раздел 2</a></li>
+                <li class="nav__item"><a href="#section3" class="nav__link">Раздел 3</a></li>
+                <li class="nav__item"><a href="#section4" class="nav__link">Раздел 4</a></li>
+                <li class="nav__item"><a href="#section5" class="nav__link">Раздел 5</a></li>
+                <li class="nav__item"><a href="#section6" class="nav__link">Раздел 6</a></li>
+                <li class="nav__item"><a href="#footer" class="nav__link">Футер</a></li>
             </ul>
         </nav>
     </header>
  
-    <main>
-        <section>
-            <h2>Заголовок второго уровня</h2>
-            <input type="submit" value="Смотреть коллекцию">
-            <p>Разнообразный и&nbsp;богатый опыт говорит нам, что разбавленное изрядной долей эмпатии, рациональное мышление требует определения и&nbsp;уточнения новых предложений. Безусловно, глубокий уровень погружения прекрасно подходит для реализации экспериментов, поражающих по&nbsp;своей масштабности и&nbsp;грандиозности. Повседневная практика показывает, что сложившаяся структура организации говорит о&nbsp;возможностях благоприятных перспектив.</p>
-            <img src="assets/img/section1.png" alt="Изображение-баннер">
+    <main class = 'main'>
+        <section id='section1' class = 'section__1'>
+            <h2 class = 'section__title'>Заголовок второго уровня</h2>
+            <button type="submit" class = 'submit__button'>Смотреть коллекцию</button> 
+            <p class = 'section__text'>Разнообразный и&nbsp;богатый опыт говорит нам, что разбавленное изрядной долей эмпатии, рациональное мышление требует определения и&nbsp;уточнения новых предложений. Безусловно, глубокий уровень погружения прекрасно подходит для реализации экспериментов, поражающих по&nbsp;своей масштабности и&nbsp;грандиозности. Повседневная практика показывает, что сложившаяся структура организации говорит о&nbsp;возможностях благоприятных перспектив.</p>
+            <img src="assets/img/section1.png" alt="Изображение-баннер" class = 'section__image'>
         </section>
        
-        <section>
-            <h2>Заголовок второго уровня</h2>
-            <div>
-                <img src="assets/icons/Delivery.png" alt="Иконка отправки">
-                <h3>Заголовок третьего уровня</h3>
-                <p>Наше дело не&nbsp;так однозначно, как может показаться: перспективное планирование не&nbsp;оставляет шанса для стандартных подходов. А&nbsp;ещё тщательные исследования конкурентов ассоциативно распределены по&nbsp;отраслям.</p>
+        <section id='section2' class = 'section__2'>
+            <h2 class = 'section2__title'>Заголовок второго уровня</h2>
+            <div class = 'difference'>
+                <img src="assets/icons/Delivery.png" alt="Иконка отправки" class = 'difference__icon'>
+                <h3 class = 'difference__title'>Заголовок третьего уровня</h3>
+                <p class = 'difference__text'>Наше дело не&nbsp;так однозначно, как может показаться: перспективное планирование не&nbsp;оставляет шанса для стандартных подходов. А&nbsp;ещё тщательные исследования конкурентов ассоциативно распределены по&nbsp;отраслям.</p>
             </div>
-            <div>
-                <img src="assets/icons/checkbox.png" alt="Иконка галочки">
-                <h3>Заголовок третьего уровня</h3>
-                <p>Для современного мира новая модель организационной деятельности не&nbsp;оставляет шанса для экономической целесообразности принимаемых решений.</p>
+            <div class = 'difference'>
+                <img src="assets/icons/checkbox.png" alt="Иконка галочки" class = 'difference__icon'>
+                <h3 class = 'difference__title'>Заголовок третьего уровня</h3>
+                <p class = 'difference__text'>Для современного мира новая модель организационной деятельности не&nbsp;оставляет шанса для экономической целесообразности принимаемых решений.</p>
             </div>
-            <div>
-                <img src="assets/icons/Purchase.png" alt="Иконка карты">
-                <h3>Заголовок третьего уровня</h3>
-                <p>Для современного мира новая модель организационной деятельности не&nbsp;оставляет шанса для экономической целесообразности принимаемых решений.</p>
+            <div class = 'difference'>
+                <img src="assets/icons/Purchase.png" alt="Иконка карты" class = 'difference__icon'>
+                <h3 class = 'difference__title'>Заголовок третьего уровня</h3>
+                <p class = 'difference__text'>Для современного мира новая модель организационной деятельности не&nbsp;оставляет шанса для экономической целесообразности принимаемых решений.</p>
             </div>
-            <div>
-                <img src="assets/icons/Sprout.png" alt="Иконка растения">
-                <h3>Заголовок третьего уровня</h3>
-                <p>Для современного мира новая модель организационной деятельности не&nbsp;оставляет шанса для экономической целесообразности принимаемых решений.</p>
+            <div class = 'difference'>
+                <img src="assets/icons/Sprout.png" alt="Иконка растения" class = 'difference__icon'>
+                <h3 class = 'difference__title'>Заголовок третьего уровня</h3>
+                <p class = 'difference__text'>Для современного мира новая модель организационной деятельности не&nbsp;оставляет шанса для экономической целесообразности принимаемых решений.</p>
             </div>
         </section>
         
-        <section>
-            <h2>Заголовок второго уровня</h2>
-            <div>
-                <img src="assets/img/section31.png" alt="Стул">
-                <h3>Заголовок третьего уровня</h3>
+        <section id='section3' class = 'section__3'>
+            <h2 class = 'section34__title'>Заголовок второго уровня</h2>
+            <div class = 'cards__section3'>
+                <img src="assets/img/section31.png" alt="Стул" class = section3__img>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <div>
-                <img src="assets/img/section32.png" alt="Вазы">
-                <h3>Заголовок третьего уровня</h3>
+            <div class = 'cards__section3'>
+                <img src="assets/img/section32.png" alt="Вазы" class = section3__img>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <div>
-                <img src="assets/img/section32.png" alt="Ваза">
-                <h3>Заголовок третьего уровня</h3>
+            <div class = 'cards__section3'>
+                <img src="assets/img/section32.png" alt="Ваза" class = section3__img>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <div>
-                <img src="assets/img/section3.png" alt="Лампа">
-                <h3>Заголовок третьего уровня</h3>
+            <div class = 'cards__section3'>
+                <img src="assets/img/section3.png" alt="Лампа" class = section3__img>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <input type="submit" value="Смотреть коллекцию">
+            <button type="submit" class = 'button__collection'>Смотреть коллекцию</button>
         </section>
 
-        <section>
-            <h2>Заголовок второго уровня</h2>
-            <div>
-                <img src="assets/img/section41.png" alt="Диван">
-                <h3>Заголовок третьего уровня</h3>
+        <section id='section4' class = 'section__4'>
+            <h2 class = 'section34__title'>Заголовок второго уровня</h2>
+            <div class = 'section4__cards'>
+                <img src="assets/img/section41.png" alt="Диван" class = 'section4__img'>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <div>
-                <img src="assets/img/section31.png" alt="Стул">
-                <h3>Заголовок третьего уровня</h3>
+            <div class = 'section4__cards'>
+                <img src="assets/img/section31.png" alt="Стул" class = 'section4__img'>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <div>
-                <img src="assets/img/section4.png" alt="Стул">
-                <h3>Заголовок третьего уровня</h3>
+            <div class = 'section4__cards'>
+                <img src="assets/img/section4.png" alt="Стул" class = 'section4__img'>
+                <h3 class = 'card__title'>Заголовок третьего уровня</h3>
                 <data value="25000">25 000 ₽</data>
             </div>
-            <input type="submit" value="Смотреть коллекцию">
+            <button type="submit" class = 'button__collection'>Смотреть коллекцию</button>
         </section>
 
-        <section>
-            <h2>Заголовок второго уровня</h2>
-            <p>Но&nbsp;современная методология разработки способствует повышению качества кластеризации усилий!</p>
-            <input type="email" name="user_mail" placeholder="Ваш email" required>
-            <button type="submit">Подписаться</button>
+        <section id='section5' class = 'section__5'>
+            <h2 class = 'section5__title'>Заголовок второго уровня</h2>
+            <p class = 'section5__text'>Но&nbsp;современная методология разработки способствует повышению качества кластеризации усилий!</p>
+            <input type="email" name="user_mail" class='subscribe__input' placeholder="Ваш email" required>
+            <button type="submit" class='subscribe__button'>Подписаться</button>
         </section>
         
-        <section>
-            <h2>Заголовок второго уровня</h2>
-            <p>А&nbsp;также предприниматели в&nbsp;сети интернет ассоциативно распределены по&nbsp;отраслям.</p>
-            <br>
-            <p>Разнообразный и&nbsp;богатый опыт говорит нам, что курс на&nbsp;социально-ориентированный национальный проект прекрасно подходит для реализации поставленных обществом задач. Как принято считать, интерактивные прототипы, инициированные исключительно синтетически, ассоциативно распределены по&nbsp;отраслям.</p>
-            <input type="submit" value="Свяжитесь с нами">
-            <img src="assets/img/section6.png" alt="Диван">
+        <section id='section6' class = 'section__6'>
+            <h2 class = 'section6__title'>Заголовок второго уровня</h2>
+            <p class = 'section6__text'>А&nbsp;также предприниматели в&nbsp;сети интернет ассоциативно распределены по&nbsp;отраслям.</p>
+            <p class = 'section6__text'>Разнообразный и&nbsp;богатый опыт говорит нам, что курс на&nbsp;социально-ориентированный национальный проект прекрасно подходит для реализации поставленных обществом задач. Как принято считать, интерактивные прототипы, инициированные исключительно синтетически, ассоциативно распределены по&nbsp;отраслям.</p>
+            <button type="submit" class = 'touch__button'>Свяжитесь с нами</button>
+            <img src="assets/img/section6.png" alt="Диван" class = 'section6__img'>
         </section>
     </main>
  
-    <footer>
-        <h4>Меню</h4>
-            <ul>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-            </ul>
-        <h4>Категории</h4>
-            <ul>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-            </ul>
-        <h4>Наша компания</h4>
-            <ul>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-                <li><a href = "#">Что-то</a></li>
-            </ul>
-        <input type="email" name="user_mail" placeholder="Ваш email" required>
-        <button type="submit">Подписаться</button>
-        <p>&copy; 2025 Сайт. Все права защищены.</p>
+    <footer id='footer' class = 'footer'>
+        <div class = 'footer__section'>
+            <h4 class = 'footer__title'>Меню</h4>
+                <ul class = 'footer__list'>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                </ul>
+        </div>
+
+        <div class = 'footer__section'>
+            <h4 class = 'footer__title'>Категории</h4>
+                <ul class = 'footer__list'>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                </ul>
+        </div>
+
+        <div class = 'footer__section'>
+            <h4 class = 'footer__title'>Наша компания</h4>
+                <ul class = 'footer__list'>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                    <li class = 'footer__item'><a href = "#" class = 'footer__link'>Что-то</a></li>
+                </ul>
+        </div>
+
+        <div class = 'footer__button'>
+            <p class = 'footer__text'>Подписаться на рассылку</p>
+            <input type="email" class = 'signup__input' name="user_mail" placeholder="Ваш email" required>
+            <button type="submit" class = 'signup__button'>Подписаться</button>
+            <p class = 'footer__text'>&copy; 2025 Сайт. Все права защищены.</p>
+        </div>
     </footer>
 </body>
 
