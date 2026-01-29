@@ -53,14 +53,14 @@
         min-width: 140px;
     }
     
-    /* Скрываем обычную навигацию на мобильных */
-    .header__nav {
-        display: none;
-    }
-    
     /* Показываем гамбургер */
     .menu-toggle {
         display: flex;
+    }
+    
+    /* Скрываем обычную навигацию на мобильных - переносим в .nav */
+    .header__nav {
+        display: none;
     }
     
     /* Стили для оверлея меню */
@@ -79,7 +79,7 @@
         display: block;
     }
     
-    /* Мобильное меню */
+    /* Мобильное меню - показываем когда активно */
     .nav {
         position: fixed;
         top: 0;
@@ -92,15 +92,18 @@
         transition: right 0.4s ease;
         z-index: 1000;
         overflow-y: auto;
+        display: block !important; /* Важно: переопределяем display: none */
     }
     
     .nav.active {
         right: 0;
+        display: block !important;
     }
     
     .nav__list {
         flex-direction: column;
         gap: 0;
+        display: flex !important;
     }
     
     .nav__item {
