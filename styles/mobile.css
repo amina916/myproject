@@ -16,10 +16,17 @@
  display: none; /* Скрываем CTA на планшетах */
  }
 }
+
 /* Планшет и мобильные (768px и меньше) */
 @media (max-width: 768px) {
+ /* Показываем гамбургер */
  .menu-toggle {
- display: flex; /* Показываем гамбургер */
+ display: flex;
+ }
+
+ /* Скрываем основную навигацию по умолчанию */
+ .header__nav {
+ display: none;
  }
 
  /* Основная навигация (скрыта по умолчанию) */
@@ -54,9 +61,11 @@
  display: block;
  width: 100%;
  padding: 18px 0;
- font-size: 1.1rem; /* Увеличиваем для мобильных */
+ font-size: 1.1rem;
  border-bottom: 1px solid #eee;
  touch-action: manipulation;
+ color: #000;
+ text-decoration: none;
  }
 
  .nav__link:active {
@@ -119,6 +128,7 @@
  font-size: 1.1rem;
  }
 }
+
 /* Мобильные (480px и меньше) */
 @media (max-width: 480px) {
  .nav {
@@ -126,7 +136,7 @@
  }
 
  body {
- font-size: 17px; /* iOS рекомендация */
+ font-size: 17px;
  }
 }
 

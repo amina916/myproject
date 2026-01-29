@@ -659,6 +659,18 @@ html {
 .scroll-top:active {
  transform: scale(0.95);
 }
+
+
+/* Кнопка "Наверх" для десктопа */
+@media (min-width: 769px) {
+    .scroll-top {
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        font-size: 28px;
+    }
+}
 /* Для мобильных устройств */
 @media (max-width: 768px) {
  .scroll-top {
@@ -735,5 +747,16 @@ html {
         padding: 14px 28px;
         font-size: 1.1rem;
         min-width: 140px;
+    }
+}
+
+/* Улучшение кнопки прокрутки для десктопа */
+@media (min-width: 769px) {
+    .scroll-top {
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        font-size: 28px;
     }
 }
