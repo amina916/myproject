@@ -1,12 +1,6 @@
 // Получаем элементы
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.querySelector('.header__nav');
-const scrollTopButton = document.getElementById('scrollTop');
-
-// Создаем оверлей для меню
-const navOverlay = document.createElement('div');
-navOverlay.className = 'nav-overlay';
-document.body.appendChild(navOverlay);
 
 // Функция открытия/закрытия меню
 function toggleMenu() {
@@ -16,79 +10,42 @@ function toggleMenu() {
     menuToggle.classList.toggle('active');
     menuToggle.setAttribute('aria-expanded', !isExpanded);
     mainNav.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-
-    // Блокируем скролл при открытом меню
-    document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
 }
 
-// Функция закрытия меню
-function closeMenu() {
-    if (menuToggle && mainNav && navOverlay) {
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        mainNav.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Обработчики событий
+// Обработчик для гамбургера
 if (menuToggle) {
     menuToggle.addEventListener('click', toggleMenu);
 }
 
-if (navOverlay) {
-    navOverlay.addEventListener('click', closeMenu);
-}
-
-// Закрытие меню при клике на ссылку
+// Закрытие меню при клике на ссылку (на мобильных)
 const navLinks = document.querySelectorAll('.nav__link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
-            // Плавный скролл к якорю
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    setTimeout(() => {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }, 300); // Небольшая задержка для закрытия меню
-                }
-            }
-            closeMenu();
+            // Небольшая задержка для плавного перехода
+            setTimeout(() => {
+                mainNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }, 300);
         }
     });
-});
-
-// Закрытие меню при нажатии Escape
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mainNav && mainNav.classList.contains('active')) {
-        closeMenu();
-    }
 });
 
 // Закрытие меню при изменении размера окна
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && mainNav && mainNav.classList.contains('active')) {
-        closeMenu();
+        mainNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
     }
 });
 
-// Кнопка "Наверх" - только если она существует
+// Кнопка "Наверх" - всегда видимая
+const scrollTopButton = document.getElementById('scrollTop');
 if (scrollTopButton) {
-    // Показываем кнопку после скролла
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollTopButton.classList.add('visible');
-        } else {
-            scrollTopButton.classList.remove('visible');
-        }
-    });
-
+    // Убираем логику появления/скрытия - кнопка всегда видна
+    
     // Прокрутка к началу страницы
     scrollTopButton.addEventListener('click', () => {
         window.scrollTo({
