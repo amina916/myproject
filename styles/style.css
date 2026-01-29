@@ -71,8 +71,9 @@ button:active, a:active {
 }
 
 body {
- font-family: 'Oswald', system-ui, sans-serif;
- font-size: 16px;
+    font-family: 'Oswald', system-ui, sans-serif;
+    font-size: 16px;
+    min-width: 320px;
 }
 
 html {
@@ -82,6 +83,8 @@ html {
 .header {
     background-color: #ffffff;
     padding: 10px 20px;
+    position: relative;
+    z-index: 100;
 }
 
 .header__top {
@@ -200,42 +203,45 @@ html {
 
 /* Гамбургер-кнопка (скрыта на десктопе) */
 .menu-toggle {
- display: none;
- flex-direction: column;
- justify-content: space-between;
- width: 44px;
- height: 44px;
- background: transparent;
- border: none;
- padding: 12px 10px;
- cursor: pointer;
- z-index: 1001;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    padding: 12px 10px;
+    cursor: pointer;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 .menu-toggle__line {
- width: 100%;
- height: 3px;
- background: #000;
- border-radius: 2px;
- transition: all 0.3s ease;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 /* Состояние открытого меню */
 .menu-toggle.active .menu-toggle__line:nth-child(1) {
- transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 .menu-toggle.active .menu-toggle__line:nth-child(2) {
- opacity: 0;
+    opacity: 0;
+}
+.menu-toggle.active .menu-toggle__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.menu-toggle.active .menu-toggle__line:nth-child(3) {
- transform: rotate(-45deg) translate(6px, -6px);
-}
 /* CTA кнопка в шапке */
 .header__cta {
- margin-left: 20px;
+    margin-left: 20px;
 }
 
 .section__1 {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px;
@@ -257,10 +263,8 @@ html {
 }
 
 .section__image {
-    display: flex;
     max-width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
 .submit__button {
@@ -273,9 +277,7 @@ html {
     border-radius: 4px;
     cursor: pointer;
     margin: 20px 0;
-     width: fit-content; /* ← Ширина по содержимому */
-    /* или */
-    width: max-content; /* ← Для современных браузеров */
+    width: fit-content;
 }
 
 .section__text {
@@ -285,7 +287,7 @@ html {
 
 .submit__button:hover {
     background: #2a2954;
-    outline: 5px solid #7680a0
+    outline: 5px solid #7680a0;
 }
 
 .submit__button:focus {
@@ -347,14 +349,6 @@ html {
     margin-top: 2rem;
 }
 
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
 .cards__section3 {
     background: white;
     padding: 15px;
@@ -395,7 +389,6 @@ html {
     outline: 5px solid #100e65;
 }
 
-
 .section__4 {
     padding: 40px 20px;
 }
@@ -418,9 +411,9 @@ html {
 
 .section4__img {
     width: 100%;
-    height: 300px; /* ← добавьте px */
-    object-fit: cover; /* ← ВАЖНО: это заставит все изображения быть одного размера */
-    border-radius: 4px; /* ← добавьте скругление */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 .section__5 {
@@ -618,68 +611,49 @@ html {
 }
 
 .signup__button:hover {
-    background: #7680a0
+    background: #7680a0;
 }
 
 .signup__button:focus {
     outline: 5px solid #ffffff;
 }
 
-/* Кнопка "Наверх" */
+/* Кнопка "Наверх" - базовые стили */
 .scroll-top {
- position: fixed;
- bottom: 30px;
- right: 30px;
- width: 56px;
- height: 56px;
- background: #2a2954;
- color: white;
- border: none;
- border-radius: 50%;
- font-size: 24px;
- cursor: pointer;
- box-shadow: 0 4px 12px rgba(0,0,0,0.3);
- opacity: 0;
- visibility: hidden;
- transition: all 0.3s ease;
- z-index: 999;
- display: flex;
- align-items: center;
- justify-content: center;
- touch-action: manipulation;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #2a2954;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
 }
+
 .scroll-top.visible {
- opacity: 1;
- visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
+
 .scroll-top:hover {
- background: #1e3a23;
- transform: scale(1.1);
+    background: #1e3a23;
+    transform: scale(1.1);
 }
+
 .scroll-top:active {
- transform: scale(0.95);
-}
-
-
-/* Кнопка "Наверх" для десктопа */
-@media (min-width: 769px) {
-    .scroll-top {
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
-        font-size: 28px;
-    }
-}
-/* Для мобильных устройств */
-@media (max-width: 768px) {
- .scroll-top {
- width: 60px;
- height: 60px;
- bottom: 20px;
- right: 20px;
- font-size: 28px;
- }
+    transform: scale(0.95);
 }
 
 /* Для планшетов */
@@ -692,71 +666,12 @@ html {
     .section4__container {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-/* Для мобильных */
-@media (max-width: 768px) {
-    .header__top {
-        flex-direction: column;
-        text-align: center;
-    }
     
-    .header__title {
-        position: static;
-        transform: none;
-        margin-bottom: 10px;
-    }
-    
-    .nav__list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    .section__1 {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-    
-    .section__image {
-        width: 100%;
-        max-width: 400px;
-        margin: 20px auto 0;
-    }
-    
-    .section2__differences {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .section4__container {
-        grid-template-columns: 1fr;
-    }
-    
-    .section__5 form {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .section__6 {
-        flex-direction: column;
-    }
-    
-    .btn {
-        padding: 14px 28px;
-        font-size: 1.1rem;
-        min-width: 140px;
-    }
-}
-
-/* Улучшение кнопки прокрутки для десктопа */
-@media (min-width: 769px) {
     .scroll-top {
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
-        font-size: 28px;
+        width: 56px;
+        height: 56px;
+        bottom: 25px;
+        right: 25px;
+        font-size: 24px;
     }
 }
