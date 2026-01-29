@@ -1,64 +1,77 @@
-// Получаем элементы
+// Меню для мобильных
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.querySelector('.header__nav');
 
-// Функция открытия/закрытия меню
-function toggleMenu() {
-    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-
-    // Переключаем состояния
-    menuToggle.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', !isExpanded);
-    mainNav.classList.toggle('active');
-}
-
-// Обработчик для гамбургера
-if (menuToggle) {
-    menuToggle.addEventListener('click', toggleMenu);
-}
-
-// Закрытие меню при клике на ссылку (на мобильных)
-const navLinks = document.querySelectorAll('.nav__link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-            // Небольшая задержка для плавного перехода
-            setTimeout(() => {
-                mainNav.classList.remove('active');
-                menuToggle.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }, 300);
-        }
-    });
-});
-
-// Закрытие меню при изменении размера окна
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 768 && mainNav && mainNav.classList.contains('active')) {
-        mainNav.classList.remove('active');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
+if (menuToggle && mainNav) {
+    // Функция переключения меню
+    function toggleMenu() {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        mainNav.classList.toggle('active');
     }
-});
-
-// Кнопка "Наверх" - всегда видимая
-const scrollTopButton = document.getElementById('scrollTop');
-if (scrollTopButton) {
-    // Убираем логику появления/скрытия - кнопка всегда видна
     
-    // Прокрутка к началу страницы
-    scrollTopButton.addEventListener('click', () => {
+    // Клик по гамбургеру
+    menuToggle.addEventListener('click', toggleMenu);
+    
+    // Закрытие меню при клике на ссылку (на мобильных)
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Закрываем меню на мобильных
+                    if (window.innerWidth <= 768) {
+                        toggleMenu();
+                    }
+                    
+                    // Плавный скролл
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+                }
+            }
+        });
+    });
+}
+
+// Кнопка "Наверх" - ПРОСТАЯ РАБОТАЮЩАЯ ВЕРСИЯ
+const scrollTopButton = document.getElementById('scrollTop');
+
+if (scrollTopButton) {
+    console.log('Кнопка "Наверх" найдена, добавляю обработчик...');
+    
+    scrollTopButton.addEventListener('click', function(e) {
+        console.log('Клик по кнопке "Наверх"');
+        e.preventDefault();
+        
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
+} else {
+    console.error('Кнопка "Наверх" не найдена! Проверьте HTML');
 }
 
-document.querySelectorAll('.footer__link[href="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-    });
+// Блокируем ссылки в футере (если они есть)
+document.addEventListener('DOMContentLoaded', function() {
+    const footerLinks = document.querySelectorAll('.footer__link[href="#"]');
+    
+    if (footerLinks.length > 0) {
+        footerLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
+        });
+    }
 });
