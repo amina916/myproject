@@ -54,3 +54,11 @@ if (scrollTopButton) {
         });
     });
 }
+
+document.querySelectorAll('.footer__link[href="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    });
+});
