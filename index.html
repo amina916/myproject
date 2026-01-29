@@ -6,6 +6,8 @@
     <title>Сайт мебельного магазина</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width:
+1024px)">
     <style>
             @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
     </style>
@@ -27,6 +29,13 @@
                 </button>
             </div>
         </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Открыть
+меню" aria-expanded="false">
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+            <span class="menu-toggle__line"></span>
+        </button>
         
         <nav class="header__nav">
             <ul class="nav__list">
@@ -39,6 +48,7 @@
                 <li class="nav__item"><a href="#footer" class="nav__link">Футер</a></li>
             </ul>
         </nav>
+        <button class="btn btn--primary header__cta">Заказать</button>
     </header>
  
     <main class = 'main'>
@@ -192,6 +202,10 @@
             <p class = 'footer__text'>&copy; 2025 Сайт. Все права защищены.</p>
         </div>
     </footer>
+    <script src="scripts/menu.js"></script>
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        ↑
+    </button>
 </body>
 
 </html>
