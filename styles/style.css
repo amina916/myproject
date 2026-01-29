@@ -17,6 +17,11 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -27,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    overflow-x: hidden; /* Запрещаем горизонтальный скролл */
 }
 
 ol, ul {
@@ -74,10 +80,13 @@ body {
     font-family: 'Oswald', system-ui, sans-serif;
     font-size: 16px;
     min-width: 320px;
+    width: 100%;
+    max-width: 100%;
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Запрещаем горизонтальный скролл */
 }
 
 .header {
@@ -85,6 +94,7 @@ html {
     padding: 10px 20px;
     position: relative;
     z-index: 100;
+    width: 100%;
 }
 
 .header__top {
@@ -94,6 +104,7 @@ html {
     align-items: center; 
     position: relative;
     padding: 10px 20px;
+    width: 100%;
 }
 
 .header__title {
@@ -105,17 +116,20 @@ html {
     position: absolute;
     left: 50%; 
     transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 .header__nav {
     padding: 20px 0;
     color: #000;
+    width: 100%;
 }
 
 .header__actions {
     display: flex;
     gap: 15px 10px;
     margin-left: auto;
+    flex-shrink: 0;
 }
 
 .header__action-btn {
@@ -124,6 +138,7 @@ html {
     padding: 4px;
     cursor: pointer;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .header__action-btn:hover {
@@ -148,6 +163,7 @@ html {
     transition: all 0.3s ease;
     touch-action: manipulation;
     border: none;
+    flex-shrink: 0;
 }
 
 .btn--primary {
@@ -178,11 +194,13 @@ html {
     list-style: none;
     padding: 0;
     gap: 30px;
+    width: 100%;
 }
 
 .nav__item {
     position: relative;
     margin: 10px;
+    flex-shrink: 0;
 }
 
 .nav__link {
@@ -191,6 +209,7 @@ html {
     font-size: 1rem;
     text-transform: uppercase;
     padding: 10px 10px;
+    white-space: nowrap;
 }
 
 .nav__link:hover {
@@ -238,6 +257,7 @@ html {
 /* CTA кнопка в шапке */
 .header__cta {
     margin-left: 20px;
+    flex-shrink: 0;
 }
 
 .section__1 {
@@ -247,6 +267,7 @@ html {
     padding: 50px;
     background: #2a2954;
     margin: 20px;
+    flex-wrap: wrap;
 }
 
 .section__title {
@@ -260,11 +281,14 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+    min-width: 300px;
 }
 
 .section__image {
     max-width: 100%;
     height: auto;
+    flex-shrink: 0;
 }
 
 .submit__button {
@@ -278,6 +302,7 @@ html {
     cursor: pointer;
     margin: 20px 0;
     width: fit-content;
+    flex-shrink: 0;
 }
 
 .section__text {
@@ -297,6 +322,7 @@ html {
 .section__2 {
     padding: 40px 20px;
     text-align: left;
+    width: 100%;
 }
 
 .section2__title {
@@ -305,6 +331,7 @@ html {
     font-size: 2rem;
     color: #2c1810;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .section2__differences {
@@ -312,6 +339,8 @@ html {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .difference {
@@ -319,6 +348,7 @@ html {
     padding: 25px;
     border-radius: 8px;
     max-width: 250px;
+    width: 100%;
 }
 
 .difference__title {
@@ -334,12 +364,14 @@ html {
 
 .section__3 {
     padding: 40px 20px;
+    width: 100%;
 }
 
 .section34__title {
     font-size: 2rem;
     color: #2c1810;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .section3__container {
@@ -347,12 +379,14 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .cards__section3 {
     background: white;
     padding: 15px;
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
 }
 
 .section3__img {
@@ -379,6 +413,7 @@ html {
     font-size: 1rem;
     margin: 30px auto 0;
     width: fit-content;
+    flex-shrink: 0;
 }
 
 .button__collection:hover {
@@ -391,6 +426,7 @@ html {
 
 .section__4 {
     padding: 40px 20px;
+    width: 100%;
 }
 
 .section4__container {
@@ -398,6 +434,7 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .section4__cards {
@@ -407,6 +444,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 350px;
+    width: 100%;
 }
 
 .section4__img {
@@ -424,24 +462,29 @@ html {
     padding: 40px 20px;
     text-align: center;
     margin: 30px 0;
+    width: 100%;
 }
 
 .section5__title {
     font-size: 2rem;
     color: #2c1810;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .section5__text {
     font-size: 0.7rem;
     color: #555;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .section__5 form {
     display: flex;
     justify-content: center;
     gap: 0;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .subscribe__input {
@@ -451,6 +494,7 @@ html {
     background-color: #ededed;
     font-size: 1rem;
     min-width: 200px;
+    flex-shrink: 0;
 }
 
 .subscribe__button {
@@ -461,6 +505,7 @@ html {
     border-radius: 1px;
     cursor: pointer;
     font-size: 1rem;
+    flex-shrink: 0;
 }
 
 .subscribe__button:hover {
@@ -479,12 +524,16 @@ html {
     padding: 40px 20px;
     background-color: white;
     margin: 30px 0;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .section6__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+    min-width: 300px;
 }
 
 .section6__title {
@@ -503,6 +552,7 @@ html {
     max-width: 100%;
     height: auto;
     margin: 30px;
+    flex-shrink: 0;
 }
 
 .touch__button {
@@ -513,6 +563,7 @@ html {
     border-radius: 1px;
     cursor: pointer;
     font-size: 1rem;
+    flex-shrink: 0;
 }
 
 .touch__button:hover {
@@ -528,6 +579,7 @@ html {
     color: white;
     padding: 40px 20px;
     margin-top: 50px;
+    width: 100%;
 }
 
 .footer__grid {
@@ -535,6 +587,7 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .footer__container {
@@ -542,10 +595,12 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
 }
 
 .footer__section {
     min-width: 200px;
+    width: 100%;
 }
 
 .footer__title {
@@ -557,11 +612,13 @@ html {
 .footer__list {
     list-style: none;
     padding: 0;
+    width: 100%;
 }
 
 .footer__item {
     position: relative;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .footer__link {
@@ -569,6 +626,8 @@ html {
     text-decoration: none;
     font-size: 1rem;
     padding: 10px 10px;
+    display: block;
+    width: 100%;
 }
 
 .footer__link:hover {
@@ -583,11 +642,13 @@ html {
     color: #ffffff;
     font-size: small;
     margin: 10px;
+    width: 100%;
 }
 
 .footer__button {
     padding: 20px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .signup__input {
@@ -598,6 +659,7 @@ html {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     margin-right: 5px;
+    flex-shrink: 0;
 }
 
 .signup__button {
@@ -608,6 +670,7 @@ html {
     border-radius: 1px;
     cursor: pointer;
     font-size: 1rem;
+    flex-shrink: 0;
 }
 
 .signup__button:hover {
