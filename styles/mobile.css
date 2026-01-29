@@ -1,303 +1,141 @@
 /* Планшет (1024px и меньше) */
 @media (max-width: 1024px) {
-    .header__cta {
-        display: none;
-    }
-    
-    .section2__differences {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-    
-    .section3__container,
-    .section4__container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+ .container {
+ padding: 0 15px;
+ }
 
-/* Мобильные (768px и меньше) */
+ .header__inner {
+ padding: 15px 0;
+ }
+
+ .nav__list {
+ gap: 20px;
+ }
+
+ .header__cta {
+ display: none; /* Скрываем CTA на планшетах */
+ }
+}
+/* Планшет и мобильные (768px и меньше) */
 @media (max-width: 768px) {
-    /* Фиксируем header при скролле */
-    .header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        padding: 15px;
-    }
-    
-    /* Верхняя часть header */
-    .header__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-        position: relative;
-        width: 100%;
-    }
-    
-    .header__title {
-        position: static;
-        transform: none;
-        margin: 0;
-        font-size: 1.5rem;
-        text-align: left;
-        flex: 1;
-    }
-    
-    /* Иконки действий (поиск, корзина, пользователь) */
-    .header__actions {
-        display: flex;
-        gap: 10px;
-        margin-left: 0;
-        position: static;
-        transform: none;
-    }
-    
-    .header__action-btn {
-        padding: 8px;
-        min-width: 44px;
-        min-height: 44px;
-    }
-    
-    /* Гамбургер-кнопка */
-    .menu-toggle {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 44px;
-        height: 44px;
-        background: transparent;
-        border: none;
-        padding: 12px 10px;
-        cursor: pointer;
-        z-index: 100;
-        margin-left: 15px;
-        order: 3; /* Помещаем гамбургер в конец */
-    }
-    
-    .menu-toggle__line {
-        width: 100%;
-        height: 3px;
-        background: #2c1810;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-    
-    .menu-toggle.active .menu-toggle__line:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-    }
-    
-    .menu-toggle.active .menu-toggle__line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle.active .menu-toggle__line:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
-    
-    /* Навигационное меню - раскрывающийся блок */
-    .header__nav {
-        display: none;
-        width: 100%;
-        background: white;
-        padding: 0;
-        margin-top: 15px;
-        border-top: 1px solid #eee;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 99;
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    
-    .header__nav.active {
-        display: block;
-    }
-    
-    .nav__list {
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-    }
-    
-    .nav__item {
-        width: 100%;
-        margin: 0;
-    }
-    
-    .nav__link {
-        display: block;
-        width: 100%;
-        padding: 18px 20px;
-        font-size: 16px;
-        border-bottom: 1px solid #eee;
-        text-align: left;
-        color: #2c1810;
-    }
-    
-    .nav__link:hover,
-    .nav__link:focus {
-        background: #f5f5f5;
-        color: #2a2954;
-    }
-    
-    /* Основной контент */
-    .section__1 {
-        flex-direction: column;
-        text-align: center;
-        margin: 0;
-        padding: 30px 15px;
-        border-radius: 0;
-    }
-    
-    .section__image {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        margin: 20px auto 0;
-        order: -1;
-    }
-    
-    .section__title {
-        font-size: 1.8rem;
-    }
-    
-    .section2__title,
-    .section34__title,
-    .section5__title,
-    .section6__title {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-    
-    .section2__differences {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .difference {
-        max-width: 100%;
-        width: 100%;
-    }
-    
-    .section3__container,
-    .section4__container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .section__5 {
-        padding: 30px 20px;
-        margin: 20px 0;
-        border-width: 20px 15px;
-    }
-    
-    .section__6 {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
-    }
-    
-    .section6__img {
-        margin: 20px 0 0;
-        max-width: 100%;
-    }
-    
-    /* Формы */
-    .section__5 form {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-    
-    .subscribe__input {
-        width: 100%;
-        max-width: 300px;
-    }
-    
-    /* Кнопки */
-    .submit__button,
-    .button__collection,
-    .touch__button {
-        padding: 15px 30px;
-        font-size: 16px;
-        width: 100%;
-        max-width: 300px;
-        margin: 20px auto;
-        min-height: 44px;
-    }
-    
-    /* Footer */
-    .footer__container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-    
-    .footer__button {
-        margin-top: 30px;
-        text-align: center;
-    }
-    
-    .signup__input {
-        width: 100%;
-        max-width: 250px;
-        margin: 10px 0;
-    }
-    
-    /* Предотвращаем горизонтальный скролл */
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-    
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    /* Кнопка "Наверх" */
-    .scroll-top {
-        width: 52px;
-        height: 52px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 22px;
-    }
+ .menu-toggle {
+ display: flex; /* Показываем гамбургер */
+ }
+
+ /* Основная навигация (скрыта по умолчанию) */
+ .nav {
+ position: fixed;
+ top: 0;
+ right: -100%;
+ width: 300px;
+ height: 100vh;
+ background: white;
+ box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+ padding: 80px 30px 30px;
+ transition: right 0.4s ease;
+ z-index: 1000;
+ overflow-y: auto;
+ }
+
+ .nav.active {
+ right: 0;
+ }
+
+ .nav__list {
+ flex-direction: column;
+ gap: 0;
+ }
+
+ .nav__item {
+ width: 100%;
+ }
+
+ .nav__link {
+ display: block;
+ width: 100%;
+ padding: 18px 0;
+ font-size: 1.1rem; /* Увеличиваем для мобильных */
+ border-bottom: 1px solid #eee;
+ touch-action: manipulation;
+ }
+
+ .nav__link:active {
+ background-color: #f5f5f5;
+ }
+
+ .nav__link:hover,
+ .nav__link.active {
+ background: transparent;
+ color: #2a2954;
+ padding-left: 10px;
+ }
+
+ /* Затемнение фона при открытом меню */
+ .nav-overlay {
+ display: none;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: rgba(0,0,0,0.5);
+ z-index: 999;
+ }
+
+ .nav-overlay.active {
+ display: block;
+ }
+
+ /* Увеличиваем touch-зоны */
+ .btn {
+ min-width: 120px;
+ }
+ 
+ /* Улучшение размеров кнопок */
+ .submit__button,
+ .button__collection,
+ .touch__button,
+ .subscribe__button {
+ padding: 16px 30px;
+ font-size: 1.1rem;
+ min-width: 160px;
+ }
+ 
+ /* Улучшение формы подписки */
+ .section__5 form {
+ flex-direction: column;
+ gap: 12px;
+ }
+ 
+ .subscribe__input {
+ min-width: 100%;
+ padding: 14px 20px;
+ font-size: 1.1rem;
+ }
+ 
+ .subscribe__button {
+ width: 100%;
+ padding: 16px;
+ font-size: 1.1rem;
+ }
+}
+/* Мобильные (480px и меньше) */
+@media (max-width: 480px) {
+ .nav {
+ width: 100%;
+ }
+
+ body {
+ font-size: 17px; /* iOS рекомендация */
+ }
 }
 
-/* Очень маленькие экраны (480px и меньше) */
-@media (max-width: 480px) {
-    .header__title {
-        font-size: 1.3rem;
-    }
-    
-    .section__1 {
-        padding: 25px 15px;
-    }
-    
-    .section__title {
-        font-size: 1.5rem;
-    }
-    
-    .section34__title,
-    .section5__title,
-    .section6__title {
-        font-size: 1.4rem;
-    }
-    
-    .nav__link {
-        font-size: 15px;
-        padding: 16px 20px;
-    }
-    
-    .footer__section {
-        min-width: 100%;
-    }
+@media (max-width: 768px) {
+ .header {
+ position: sticky;
+ top: 0;
+ background-color: white;
+ z-index: 100;
+ box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+ }
 }
